@@ -75,7 +75,3 @@
 - [WebSocket Security Best Practices](https://portswigger.net/web-security/websockets)
 
 ---
-
-## 📝 License
-
-MIT License (see [LICENSE](LICENSE))
