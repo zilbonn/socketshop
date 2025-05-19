@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SocketShop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="logo">🛒 SocketShop</h1>
+    <div id="login" class="card">
+      <h2>Sign in</h2>
+      <input id="user" placeholder="Username" value="user" autocomplete="username">
+      <input id="pass" placeholder="Password" value="user" type="password" autocomplete="current-password">
+      <button class="btn" onclick="login()">Login</button>
+    </div>
+    <div id="main" style="display:none">
+      <div class="flex-row">
+        <div class="card chat-card">
+          <h2>Live Chat</h2>
+          <div id="chat" class="chat-box"></div>
+          <div class="chat-input-row">
+            <input id="msg" placeholder="Type a message" autocomplete="off">
+            <button class="btn" onclick="sendChat()">Send</button>
+          </div>
+        </div>
+        <div class="card cart-card">
+          <h2>Your Cart</h2>
+          <div id="cart" class="cart-box"></div>
+          <button class="btn" onclick="addCart()">Add random item</button>
+        </div>
+      </div>
+      <div class="card alert-card">
+        <h2>Promotions & Alerts</h2>
+        <div id="alerts"></div>
+      </div>
+    </div>
+  </div>
+  <script src="client.js"></script>
+</body>
+</html> 

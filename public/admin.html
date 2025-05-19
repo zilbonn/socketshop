@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SocketShop Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="logo">🛒 SocketShop <span class="admin-badge">Admin</span></h1>
+    <div id="login" class="card">
+      <h2>Admin Login</h2>
+      <input id="user" placeholder="Username" value="admin" autocomplete="username">
+      <input id="pass" placeholder="Password" value="admin" type="password" autocomplete="current-password">
+      <button class="btn" onclick="login()">Login</button>
+    </div>
+    <div id="main" style="display:none">
+      <div class="flex-row">
+        <div class="card admin-actions-card">
+          <h2>Admin Actions</h2>
+          <button class="btn btn-accent" onclick="sendPromo()">Send Promo Alert</button>
+          <button class="btn btn-warn" onclick="sendStockLow()">Send Stock Low</button>
+        </div>
+        <div class="card alert-card">
+          <h2>All Alerts</h2>
+          <div id="alerts"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="client.js"></script>
+  <script>
+    function sendPromo() {
+      ws.send(JSON.stringify({ type: 'adminAlert', msg: '🔥 50% off on all items! 🔥' }));
+    }
+    function sendStockLow() {
+      ws.send(JSON.stringify({ type: 'adminAction', action: 'stockLow', sku: '123' }));
+    }
+  </script>
+</body>
+</html> 
